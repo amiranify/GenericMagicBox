@@ -3,6 +3,7 @@ import java.util.Random;
 public class MagicBox<T> {
     protected T[] items;
     protected int size;
+    private Random random = new Random();
 
     public MagicBox(int size) {
         T[] items = (T[]) new Object[size];
@@ -33,7 +34,6 @@ public class MagicBox<T> {
         if (count != 0) {
             throw new RuntimeException("Остались незаполненных ячеек " + count + " шт.");
         }
-        Random random = new Random();
         int randomInt = random.nextInt(items.length);
         System.out.println(items[randomInt]);
         return items[randomInt];
